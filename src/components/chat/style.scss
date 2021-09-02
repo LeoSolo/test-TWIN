@@ -1,0 +1,92 @@
+.chat-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #E3E3E3;
+
+  .msgs-list {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 20px 20px 100px 20px;
+
+    .msg {
+      position: relative;
+      width: 300px;
+      height: fit-content;
+      background: #207DF1;
+      padding: 10px;
+      border-radius: 8px;
+      float: right;
+      clear: both;
+      margin-bottom: 10px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: #207DF1;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        left: calc(100% - 6px);
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &.incoming {
+        background: #50C758;
+        float: left;
+
+        &::after {
+          left: -4px;
+          background: #50C758;
+        }
+      }
+    }
+  }
+
+  .msg-input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 34px;
+    width: 100%;
+    padding: 0 8px;
+    outline: none;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 34px;
+    padding: 0 14px;
+    box-shadow: inset 0 1px 0 0 #9acc85;
+    background: linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+    background-color: #74ad5a;
+    border: 1px solid #3b6e22;
+    display: inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size: 13px;
+    font-weight:bold;
+    text-decoration:none;
+
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+      background-color: #68a54b;
+    }
+
+    &:disabled {
+      background: #9acc85;
+      cursor: not-allowed;
+    }
+
+    &:active {
+      height: 35px;
+      bottom: -1px;
+    }
+  }
+}
